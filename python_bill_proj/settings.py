@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "bill_auto",
 ]
 
 MIDDLEWARE = [
@@ -77,7 +78,7 @@ DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
         "NAME": "my_db",
-        "USER": "user",
+        "USER": "ahaizel",
         "PASSWORD": "pass123",
         "HOST": "localhost",
         "PORT": "",
