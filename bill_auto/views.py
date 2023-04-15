@@ -3,4 +3,4 @@ from django.http import HttpResponse
 
 # Create your views here.
 def greet_view(request):
-    return HttpResponse('I like food')
+    return render(request, 'index.html')
