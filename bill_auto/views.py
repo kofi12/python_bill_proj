@@ -4,3 +4,6 @@ from django.http import HttpResponse
 # Create your views here.
 def greet_view(request):
     return render(request, 'index.html')
+
+def dash_view(request):
+    return render(request, 'dashboard.html')
