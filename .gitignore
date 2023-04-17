@@ -354,5 +354,3 @@ MigrationBackup/
 .env
 .vscode/
 __pycache__/
-static
-staticfiles
