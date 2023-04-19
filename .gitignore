@@ -354,3 +354,4 @@ MigrationBackup/
 .env
 .vscode/
 __pycache__/
+bill_auto/migrations

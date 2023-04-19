@@ -23,6 +23,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path('', include('bill_auto.urls')),
     path('dashboard/', include('bill_auto.urls')),
+    path('forms/', include('bill_auto.urls')),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

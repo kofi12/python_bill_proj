@@ -1,8 +1,9 @@
-import models
-import datetime
+from django.forms import ModelForm
+from .models import Resident
 
-"""
-This module will hold the business logic with which the views can use
-"""     
 
+class ResidentForm(ModelForm):
+    class Meta:
+        model = Resident
+        fields =  '__all__'
     
