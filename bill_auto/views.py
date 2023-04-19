@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from .models import Resident
 from .forms import ResidentForm
@@ -8,8 +8,9 @@ def greet_view(request):
     return render(request, 'index.html')
 
 def dash_view(request):
-    #resident = Resident.objects.get(pk=id)
-    return render(request, 'dashboard.html')
+    residents = Resident.objects.all().order_by('name')
+    context = {'residents': residents}
+    return render(request, 'dashboard.html', context)
 
 def resident_list(request):
     pass
@@ -21,6 +22,7 @@ def resident_form(request):
         form = ResidentForm(request.POST)
         if form.is_valid():
             form.save()
+            return redirect('/')
         
     context = {'form': form}
     return render(request, 'forms.html', context)

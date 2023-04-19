@@ -18,6 +18,14 @@
                 <th class="date" name="admission">Admission Day</th>
                 <th class="money" name="rent">Monthly Income</th>  
             </tr>
+            {% for resident in residents %}
+                <tr>
+                    <td>{{ resident.name }}</td>
+                    <td>{{ resident.birthday }}</td>
+                    <td>{{ resident.admission_date }}</td>
+                    <td>{{ resident.rent }}</td>
+                </tr>
+            {% endfor %}
         </table>
     </head>
 </html>
