@@ -8,12 +8,10 @@ def greet_view(request):
     return render(request, 'index.html')
 
 def dash_view(request):
+    
     residents = Resident.objects.all().order_by('name')
     context = {'residents': residents}
     return render(request, 'dashboard.html', context)
-
-def resident_list(request):
-    pass
 
 def resident_form(request):
     form = ResidentForm()

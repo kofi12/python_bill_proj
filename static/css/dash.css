@@ -4,3 +4,8 @@ th {
     gap : 10px;
     padding: 10px;
 }
+
+td {
+    padding: 10px;
+    gap: 10px
+}
