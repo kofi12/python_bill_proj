@@ -6,3 +6,6 @@ urlpatterns = [
     path('dashboard/', views.dash_view),
     path('forms/', views.resident_form),
 ] 
+
+
+#Here is a comment from the views.py file:
