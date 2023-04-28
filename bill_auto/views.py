@@ -19,8 +19,55 @@ def resident_form(request):
     if request.method == 'POST':
         form = ResidentForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('/')
+            try:
+                form.save()
+                return redirect('/')
+            except:
+                pass
+    else:
+        form = ResidentForm()
         
     context = {'form': form}
     return render(request, 'forms.html', context)
+
+#create operation
+def add_resident(request):
+    if request.method == 'POST':
+        form = ResidentForm(request.POST)
+        if form.is_valid():
+            try:
+                form.save()
+                return redirect('/')
+            except:
+                pass
+    else:
+        form = ResidentForm()
+        
+    context = {'form': form}
+    return render(request, 'dash_board.html', context)
+
+#delete operation
+def delete_resident(request, id):
+    resident = Resident.objects.get(id=id)
+    if request.method == 'DELETE':
+        resident.delete()
+        return redirect('/')
+
+#update operation
+def update_resident(request, id):
+    resident = Resident.objects.get(id=id)
+    
+    if request.method == 'POST':
+        form = ResidentForm(request.POST, instance=resident)
+        if form.is_valid():
+            try:
+                form.save()
+                return redirect('/')
+            except:
+                pass
+    else:
+        form = ResidentForm(instance=resident)
+    
+    context = {'form': form}
+    return render(request, 'dashboard.html', context)
+    
