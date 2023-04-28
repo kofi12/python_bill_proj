@@ -1,7 +1,21 @@
-<h3>Resident Information Input Form</h3>
-<hr>
-<form action="" method="post">
-    {% csrf_token %}
-    {{form}}
-    <input type="submit" value="Submit">
-</form>
+{% extends "base.html" %}
+
+    {% block body %}
+    <form class="row g-3">
+        <div class="col-md-6">
+          <input type="text" class="form-control" placeholder="Full Name" aria-label="Full Name">
+        </div>
+        <div class="col-md-6">
+          <label for="inputBirthday" class="form-label">Birthday</label>
+          <input type="date" class="form-control" id="inputBirthday" placeholder="Birthday">
+        </div>
+        <div class="col-12">
+          <label for="inputAdmissionDate" class="form-label">Admission Date</label>
+          <input type="date" class="form-control" id="inputAdmissionDate" placeholder="1234 Main St">
+        </div>
+        <div class="col-12">
+          <label for="inputIncome" class="form-label">Monthly Income</label>
+          <input type="text" class="form-control" id="inputIncome" placeholder="">
+        </div>
+      </form>
+    {% endblock %}

@@ -13,23 +13,6 @@ def dash_view(request):
     context = {'residents': residents}
     return render(request, 'dashboard.html', context)
 
-def resident_form(request):
-    form = ResidentForm()
-    
-    if request.method == 'POST':
-        form = ResidentForm(request.POST)
-        if form.is_valid():
-            try:
-                form.save()
-                return redirect('/')
-            except:
-                pass
-    else:
-        form = ResidentForm()
-        
-    context = {'form': form}
-    return render(request, 'forms.html', context)
-
 #create operation
 def add_resident(request):
     if request.method == 'POST':
@@ -44,7 +27,7 @@ def add_resident(request):
         form = ResidentForm()
         
     context = {'form': form}
-    return render(request, 'dash_board.html', context)
+    return render(request, 'forms.html', context)
 
 #delete operation
 def delete_resident(request, id):
@@ -69,5 +52,5 @@ def update_resident(request, id):
         form = ResidentForm(instance=resident)
     
     context = {'form': form}
-    return render(request, 'dashboard.html', context)
+    return render(request, 'forms.html', context)
     
