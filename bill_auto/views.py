@@ -4,8 +4,6 @@ from .models import Resident
 from .forms import ResidentForm
 
 # Create your views here.
-def greet_view(request):
-    return render(request, 'index.html')
 
 def dash_view(request):
     
@@ -14,43 +12,18 @@ def dash_view(request):
     return render(request, 'dashboard.html', context)
 
 #create operation
-def add_resident(request):
-    if request.method == 'POST':
-        form = ResidentForm(request.POST)
-        if form.is_valid():
-            try:
-                form.save()
-                return redirect('/')
-            except:
-                pass
-    else:
-        form = ResidentForm()
-        
-    context = {'form': form}
-    return render(request, 'forms.html', context)
+def add(request):
+    return render(request, 'add.html')
 
 #delete operation
-def delete_resident(request, id):
+def delete(request, id):
     resident = Resident.objects.get(id=id)
-    if request.method == 'DELETE':
-        resident.delete()
-        return redirect('/')
+    resident.delete()
+    return redirect('/')
 
 #update operation
-def update_resident(request, id):
+def update(request, id):
     resident = Resident.objects.get(id=id)
     
-    if request.method == 'POST':
-        form = ResidentForm(request.POST, instance=resident)
-        if form.is_valid():
-            try:
-                form.save()
-                return redirect('/')
-            except:
-                pass
-    else:
-        form = ResidentForm(instance=resident)
-    
-    context = {'form': form}
-    return render(request, 'forms.html', context)
+    return render(request, 'update.html', {'resident': resident})
     

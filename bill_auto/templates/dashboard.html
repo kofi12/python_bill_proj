@@ -19,8 +19,12 @@
                         <td>{{ resident.birthday }}</td>
                         <td>{{ resident.admission_date }}</td>
                         <td>{{ resident.rent }}</td>
-                        <td><button type="button" class="btn btn-primary" href="{% url 'update' resident.id %}">Edit</button></td>
-                        <td><button type="button" class="btn btn-danger">Delete</i></button></td>
+                        <td>
+                            <a href="{% url 'forms' resident.id %}"><button type="button" class="btn btn-primary">Edit</button></a>
+                        </td>
+                        <td>
+                            <a href="delete/{{resident.id}}"><button type="button" class="btn btn-danger">Delete</button></a>
+                        </td>
                     </tr>
                     {% endfor %}
                 </table>

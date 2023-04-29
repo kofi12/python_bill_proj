@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+    {% block body %}
+    <form class="row g-3" action="" method="post">
+        {% csrf_token %}
+        <div class="col-md-6">
+          <input type="text" class="form-control" aria-label="Full Name" placeholder="Full Name">
+        </div>
+        <div class="col-md-6">
+          <label for="inputBirthday" class="form-label">Birthday</label>
+          <input type="date" class="form-control" id="inputBirthday" placeholder="Birthday">
+        </div>
+        <div class="col-12">
+          <label for="inputAdmissionDate" class="form-label">Admission Date</label>
+          <input type="date" class="form-control" id="inputAdmissionDate" placeholder="Admission Date">
+        </div>
+        <div class="col-12">
+          <label for="inputIncome" class="form-label">Monthly Income</label>
+          <input type="text" class="form-control" id="inputIncome" placeholder="Monthly Income">
+        </div>
+      </form>
+    {% endblock %}

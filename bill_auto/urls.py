@@ -3,6 +3,7 @@ from . import views
 
 urlpatterns = [
     path('', views.dash_view),
-    path('forms/', views.add_resident, name='add'),
-    path('forms/<int:id>/', views.update_resident, name='update'),
+    path('add/', views.add, name='add'),
+    path('update/<int:id>/', views.update, name='update'),
+    path('delete/<int:id>/', views.delete, name='delete'),
 ] 
