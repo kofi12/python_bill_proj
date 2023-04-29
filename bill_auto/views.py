@@ -13,6 +13,13 @@ def dash_view(request):
 
 #create operation
 def add(request):
+    name = request.POST['name']
+    birthday = request.POST['birthday']
+    admission_date = request.POST['admission_date']
+    rent = request.POST['rent']
+    
+    resident = Resident(name=name, birthday=birthday, admission_date=admission_date, rent=rent)
+    resident.save()
     return render(request, 'add.html')
 
 #delete operation
