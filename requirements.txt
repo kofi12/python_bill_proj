@@ -1,3 +1,4 @@
 psycopg2-binary
 psycopg
 python-dotenv
+fontawesomefree==6.4.0

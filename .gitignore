@@ -353,3 +353,7 @@ MigrationBackup/
 .ionide/
 .env
 .vscode/
+__pycache__/
+bill_auto/migrations
+
+

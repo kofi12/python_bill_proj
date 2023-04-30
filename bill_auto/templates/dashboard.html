@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+        {% block body %}
+            <div class="table-responsive">    
+                <table class="table table-light">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Resident Name</th>
+                            <th scope="col">Birthday</th>
+                            <th scope="col">Admission Day</th>
+                            <th scope="col">Monthly Income</th>
+                            <th scope="col">Action</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    {% for resident in residents %}
+                    <tr>
+                        <td>{{ resident.name }}</td>
+                        <td>{{ resident.birthday }}</td>
+                        <td>{{ resident.admission_date }}</td>
+                        <td>{{ resident.rent }}</td>
+                        <td>
+                            <a href="{% url 'update' resident.id %}"><button type="button" class="btn btn-primary">Edit</button></a>
+                        </td>
+                        <td>
+                            <a href="delete/{{resident.id}}"><button type="button" class="btn btn-danger">Delete</button></a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        {% endblock %}
+       

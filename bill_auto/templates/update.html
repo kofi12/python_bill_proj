@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+    {% block body %}
+    <form class="row g-3" action"" method="post">
+        {% csrf_token %}
+        <div class="col-md-6">
+          <input type="text" class="form-control" aria-label="Full Name" name="name" value="{{resident.name}}">
+        </div>
+        <div class="col-md-6">
+          <label for="inputBirthday" class="form-label">Birthday</label>
+          <input type="date" class="form-control" id="inputBirthday" name="birthday" value="{{resident.birthday}}">
+        </div>
+        <div class="col-12">
+          <label for="inputAdmissionDate" class="form-label">Admission Date</label>
+          <input type="date" class="form-control" id="inputAdmissionDate" name="admission_date" value="{{resident.admission_date}}">
+        </div>
+        <div class="col-12">
+          <label for="inputIncome" class="form-label">Monthly Income</label>
+          <input type="text" class="form-control" id="inputIncome" name="rent" value="{{resident.rent}}">
+        </div>
+      </form>
+      <a href="/"><button type="button" class="btn btn-primary">Done</button></a>
+    {% endblock %}
