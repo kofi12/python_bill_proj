@@ -97,12 +97,13 @@ WSGI_APPLICATION = "python_bill_proj.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "my_db",
-        "USER": "ahaizel",
-        "PASSWORD": "pass123",
-        "HOST": "localhost",
-        "PORT": "",
-        "MIGRATE": "True"
+        "NAME": "railway",
+        "USER": "postgres",
+        "PASSWORD": "uHpfda8lSwxdEuFoxJd9",
+        "HOST": "containers-us-west-128.railway.app",
+        "PORT": "5786",
+        "MIGRATE": "True",
+        "DATABASE_URL": "postgresql://postgres:uHpfda8lSwxdEuFoxJd9@containers-us-west-128.railway.app:5786/railway"
     }
 }
 
