@@ -23,6 +23,12 @@ def delete(request, id):
 def update(request, id):
     resident = Resident.objects.get(id=id)
     form = ResidentForm(instance=resident)
+    
+    if request.method == 'POST':
+        form = ResidentForm(request.POST, instance=resident)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
     context = {'form': form}
     
     return render(request, 'update.html', context)
