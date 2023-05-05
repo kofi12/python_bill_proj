@@ -356,5 +356,5 @@ MigrationBackup/
 __pycache__/
 bill_auto/migrations
 python_bill_proj/__pycache__/
-
+staticfiles/
 
