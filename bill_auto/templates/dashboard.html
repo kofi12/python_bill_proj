@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 
         {% block body %}
+            <div>
+                <a href="{% url 'add' %}"><button type="button" class="btn btn-success">Add Resident</button></a>
+            </div>
             <div class="table-responsive">    
                 <table class="table table-light">
                     <thead class="thead-dark">
@@ -20,7 +23,7 @@
                         <td>{{ resident.admission_date }}</td>
                         <td>{{ resident.rent }}</td>
                         <td>
-                            <a href="{% url 'update' resident.id %}"><button type="button" class="btn btn-primary">Edit</button></a>
+                            <a href="update/{{resident.id}}"><button type="button" class="btn btn-primary">Update</button></a>
                         </td>
                         <td>
                             <a href="delete/{{resident.id}}"><button type="button" class="btn btn-danger">Delete</button></a>
@@ -28,6 +31,9 @@
                     </tr>
                     {% endfor %}
                 </table>
+            </div>
+            <div>
+                <a href=""><button type="button" class="btn btn-success">Download Billing Spreadsheet</button></a>
             </div>
         {% endblock %}
        

@@ -13,14 +13,16 @@ def dash_view(request):
 
 #create operation
 def add(request):
-    name = request.POST['name']
-    birthday = request.POST['birthday']
-    admission_date = request.POST['admission_date']
-    rent = request.POST['rent']
+    form = ResidentForm()
     
-    resident = Resident(name=name, birthday=birthday, admission_date=admission_date, rent=rent)
-    resident.save()
-    return render(request, 'add.html')
+    if request.method == 'POST':
+        form = ResidentForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+    context = {'form': form}
+    
+    return render(request, 'update.html', context)
 
 #delete operation
 def delete(request, id):
@@ -31,6 +33,14 @@ def delete(request, id):
 #update operation
 def update(request, id):
     resident = Resident.objects.get(id=id)
+    form = ResidentForm(instance=resident)
     
-    return render(request, 'update.html', {'resident': resident})
+    if request.method == 'POST':
+        form = ResidentForm(request.POST, instance=resident)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+    context = {'form': form}
+    
+    return render(request, 'update.html', context)
     
