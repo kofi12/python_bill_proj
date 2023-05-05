@@ -33,7 +33,9 @@ SECRET_KEY = os.environ['SECRET_KEY'] # Instead of your actual secret key
 DEBUG = False
 # DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['pythonbillproj-production.up.railway.app', '127.0.0.1']
+
+CSRF_TRUSTED_ORIGINS = ['pythonbillproj-production.up.railway.app']
 
 
 # Application definition
