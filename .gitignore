@@ -355,5 +355,6 @@ MigrationBackup/
 .vscode/
 __pycache__/
 bill_auto/migrations
+python_bill_proj/__pycache__/
 
 
