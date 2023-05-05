@@ -22,7 +22,7 @@ if os.path.isfile(dotenv_file):
     dotenv.load_dotenv(dotenv_file)
 
 # UPDATE secret key
-SECRET_KEY = os.environ['SECRET_KEY'] # Instead of your actual secret key
+SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY', 'ap7z#fe(si3x$r&w3vj^=r6g9@wi28g3cq3bq405z=cgzwly79') # Instead of your actual secret key
 
 
 
@@ -30,8 +30,8 @@ SECRET_KEY = os.environ['SECRET_KEY'] # Instead of your actual secret key
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
-# DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
+# DEBUG = True
+DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 
 ALLOWED_HOSTS = ['pythonbillproj-production.up.railway.app', '127.0.0.1']
 
