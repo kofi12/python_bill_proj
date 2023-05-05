@@ -35,7 +35,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['pythonbillproj-production.up.railway.app', '127.0.0.1']
 
-CSRF_TRUSTED_ORIGINS = ['pythonbillproj-production.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://pythonbillproj-production.up.railway.app']
 
 
 # Application definition
