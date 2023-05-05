@@ -22,9 +22,6 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('', include('bill_auto.urls')),
-    path('add/', include('bill_auto.urls')),
-    path('update/<int:id>/', include('bill_auto.urls')),
-    path('delete/<int:id>/', include('bill_auto.urls')),
 ]
 
 urlpatterns += staticfiles_urlpatterns()

@@ -20,7 +20,7 @@
                         <td>{{ resident.admission_date }}</td>
                         <td>{{ resident.rent }}</td>
                         <td>
-                            <a href="{% url 'update' resident.id %}"><button type="button" class="btn btn-primary">Edit</button></a>
+                            <a href="update/{{resident.id}}"><button type="button" class="btn btn-primary">Edit</button></a>
                         </td>
                         <td>
                             <a href="delete/{{resident.id}}"><button type="button" class="btn btn-danger">Delete</button></a>

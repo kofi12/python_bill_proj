@@ -12,15 +12,6 @@ def dash_view(request):
     return render(request, 'dashboard.html', context)
 
 #create operation
-def add(request):
-    name = request.POST['name']
-    birthday = request.POST['birthday']
-    admission_date = request.POST['admission_date']
-    rent = request.POST['rent']
-    
-    resident = Resident(name=name, birthday=birthday, admission_date=admission_date, rent=rent)
-    resident.save()
-    return render(request, 'add.html')
 
 #delete operation
 def delete(request, id):
@@ -30,7 +21,12 @@ def delete(request, id):
 
 #update operation
 def update(request, id):
-    resident = Resident.objects.get(id=id)
+    if request == 'GET':
+        resident = Resident.objects.get(id=id)
+        form = ResidentForm(request.POST, instance=resident)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
     
-    return render(request, 'update.html', {'resident': resident})
+    return render(request, 'update.html', {'form': form})
     
