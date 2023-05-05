@@ -12,6 +12,17 @@ def dash_view(request):
     return render(request, 'dashboard.html', context)
 
 #create operation
+def add(request):
+    form = ResidentForm()
+    
+    if request.method == 'POST':
+        form = ResidentForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/')
+    context = {'form': form}
+    
+    return render(request, 'update.html', context)
 
 #delete operation
 def delete(request, id):

@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 
         {% block body %}
+            <div>
+                <a href="{% url 'add' %}"><button type="button" class="btn btn-success">Add Resident</button></a>
+            </div>
             <div class="table-responsive">    
                 <table class="table table-light">
                     <thead class="thead-dark">
