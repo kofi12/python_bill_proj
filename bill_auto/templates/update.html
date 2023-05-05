@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
     {% block body %}
-    <form class="row g-3" action"" method="post">
+    <form class="row g-3" action"" method="GET">
         {% csrf_token %}
         {{ form.as_p }}
       <a href="/"><button type="button" class="btn btn-primary">Done</button></a>

@@ -21,12 +21,9 @@ def delete(request, id):
 
 #update operation
 def update(request, id):
-    if request == 'GET':
-        resident = Resident.objects.get(id=id)
-        form = ResidentForm(request.POST, instance=resident)
-        if form.is_valid():
-            form.save()
-            return redirect('/')
+    resident = Resident.objects.get(id=id)
+    form = ResidentForm(instance=resident)
+    context = {'form': form}
     
-    return render(request, 'update.html', {'form': form})
+    return render(request, 'update.html', context)
     
