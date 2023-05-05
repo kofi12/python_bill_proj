@@ -1,3 +1,4 @@
+
 from django.forms import ModelForm, TextInput, DateInput, NumberInput
 from .models import Resident
 
@@ -11,4 +12,5 @@ class ResidentForm(ModelForm):
             'admission_date': DateInput(attrs={'type': 'date'}),
             'discharge_date': DateInput(attrs={'type': 'date'}),
         }
+
     

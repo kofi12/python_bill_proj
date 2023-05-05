@@ -355,3 +355,5 @@ MigrationBackup/
 .vscode/
 __pycache__/
 bill_auto/migrations
+
+
